@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Danil](https://up.htmlacademy.ru/javascript/30/user/1025351).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Конотоп](https://htmlacademy.ru/profile/sineway).
 
 ---
 
