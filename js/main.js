@@ -40,3 +40,5 @@ const createPicturesData = (itemCount) => new Array(itemCount).fill(1).map((it, 
   comments: createCommentsData(getRandomInteger(0, 30))
 })
 );
+
+void(createPicturesData);
