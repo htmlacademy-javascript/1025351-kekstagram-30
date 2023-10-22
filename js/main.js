@@ -31,3 +31,12 @@ const createCommentsData = (itemCount) => new Array(itemCount).fill(1).map((it, 
   name: getRandomItem(USERNAMES)
 })
 );
+
+const createPicturesData = (itemCount) => new Array(itemCount).fill(1).map((it, index) => ({
+  id: it + index,
+  url: `photos/${it + index}.jpg`,
+  description: getRandomItem(DESCRIPTIONS),
+  likes: getRandomInteger(15, 200),
+  comments: createCommentsData(getRandomInteger(0, 30))
+})
+);
