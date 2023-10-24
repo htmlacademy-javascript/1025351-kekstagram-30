@@ -22,7 +22,7 @@ const MESSAGES = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
 
-import {getRandomItem, getRandomInteger} from './utilities.js';
+import {getRandomItem, getRandomInteger} from './util.js';
 
 const createCommentsData = (itemCount) => new Array(itemCount).fill(1).map((it, index) => ({
   id: it + index,
