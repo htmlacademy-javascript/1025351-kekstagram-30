@@ -11,14 +11,17 @@ const isPalindrome = (text) => {
   return reversedString === normalizedString;
 };
 
-/* или более краткий вариант
-
-const isPalindrome = (text) => {
-  const normalizedString = text.replaceAll(' ', '').toLowerCase();
-  const reversedString = text.split('').reverse().join('');
-  return reversedString === normalizedString;
+// Функция для перевода времени(строковое значение) в минуты
+const parseMinutes = (time) => {
+  const [hours, minutes] = time.split(':').map(Number);
+  return hours * 60 + minutes;
 };
 
-*/
+const checkMeetingTime = (workStart, workEnd, meetingStart, meetingTime) => {
+  workStart = parseMinutes(workStart);
+  workEnd = parseMinutes(workEnd);
+  const meetingDuration = parseMinutes(meetingStart) + meetingTime;
+  return (meetingStart <= workStart) && (meetingDuration <= workEnd);
+};
 
-void (fitsLength, isPalindrome);
+void (fitsLength, isPalindrome, parseMinutes, checkMeetingTime);
