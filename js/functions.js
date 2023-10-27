@@ -17,11 +17,11 @@ const parseMinutes = (time) => {
   return hours * 60 + minutes;
 };
 
-const checkMeetingTime = (workStart, workEnd, meetingStart, meetingTime) => {
+const validateMeetingTime = (workStart, workEnd, meetingStart, meetingTime) => {
   workStart = parseMinutes(workStart);
   workEnd = parseMinutes(workEnd);
   const meetingDuration = parseMinutes(meetingStart) + meetingTime;
   return (meetingStart <= workStart) && (meetingDuration <= workEnd);
 };
 
-void (fitsLength, isPalindrome, parseMinutes, checkMeetingTime);
+void (fitsLength, isPalindrome, parseMinutes, validateMeetingTime);
