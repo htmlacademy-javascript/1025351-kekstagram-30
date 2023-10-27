@@ -11,14 +11,4 @@ const isPalindrome = (text) => {
   return reversedString === normalizedString;
 };
 
-/* или более краткий вариант
-
-const isPalindrome = (text) => {
-  const normalizedString = text.replaceAll(' ', '').toLowerCase();
-  const reversedString = text.split('').reverse().join('');
-  return reversedString === normalizedString;
-};
-
-*/
-
 void (fitsLength, isPalindrome);
