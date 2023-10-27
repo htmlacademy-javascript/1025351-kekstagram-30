@@ -1,4 +1,4 @@
-import {getRandomItem, getRandomInteger} from './util';
+import {getRandomItem, getRandomInteger} from './util.js';
 
 const USERNAMES = ['Александра', 'Андрей', 'Екатерина', 'Иван', 'Мария', 'Сергей'];
 
