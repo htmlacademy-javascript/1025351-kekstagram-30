@@ -1,4 +1,5 @@
 const thumbnailTemplate = document.querySelector('#picture').content.querySelector('.picture');
+const thumbnailsContainer = document.querySelector('.pictures');
 
 const createThumbnail = (picturesData) => picturesData.map(({url, description, likes, comments}) => {
   const thumbnail = thumbnailTemplate.cloneNode(true);
@@ -9,3 +10,8 @@ const createThumbnail = (picturesData) => picturesData.map(({url, description, l
   return thumbnail;
 });
 
+const renderThumbnail = (picturesData) => {
+  thumbnailsContainer.append(...createThumbnail(picturesData));
+};
+
+export {renderThumbnail};
