@@ -11,4 +11,4 @@ const isPalindrome = (text) => {
   return reversedString === normalizedString;
 };
 
-void (fitsLength, isPalindrome);
+void (fitsLength, isPalindrome, parseMinutes, validateMeetingTime);
