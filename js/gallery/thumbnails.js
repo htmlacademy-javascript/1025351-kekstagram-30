@@ -11,6 +11,7 @@ const createThumbnails = (picturesData) => picturesData.map(({url, description, 
 });
 
 const renderThumbnails = (picturesData) => {
+  thumbnailsContainer.querySelectorAll('.picture').forEach((thumbnail) => thumbnail.remove());
   thumbnailsContainer.append(...createThumbnails(picturesData));
 };
 
