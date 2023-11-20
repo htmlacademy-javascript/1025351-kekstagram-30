@@ -22,7 +22,7 @@ const renderComments = (commentsData) => {
   };
 
   container.replaceChildren();
-  shownCounter.textContent = commentsData.length;
+  shownCounter.textContent = commentsData.length - data.length;
   totalCounter.textContent = commentsData.length;
 
   loaderButton.addEventListener('click', onLoaderButtonClick);
