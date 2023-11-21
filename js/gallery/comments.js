@@ -10,15 +10,30 @@ const createComments = (commentsData) => commentsData.map(({avatar, message, nam
   comment.querySelector('.social__picture').src = avatar;
   comment.querySelector('.social__picture').alt = name;
   comment.querySelector('.social__text').textContent = message;
-  shownCounter.textContent = commentsData.length;
-  totalCounter.textContent = commentsData.length;
-  loaderButton.classList.add('hidden');
 
   return comment;
 });
 
-const renderComments = (commentsData) => {
-  container.replaceChildren(...createComments(commentsData));
+const renderComments = (commentsData, step = 5) => {
+  const data = [...commentsData];
+
+  const onLoaderButtonClick = () => {
+    container.append(...createComments(data.splice(0, step)));
+    shownCounter.textContent = commentsData.length - data.length;
+    totalCounter.textContent = commentsData.length;
+    loaderButton.classList.toggle('hidden', !data.length);
+  };
+
+  container.replaceChildren();
+
+
+  loaderButton.addEventListener('click', onLoaderButtonClick);
+  loaderButton.click();
+
+  document.addEventListener('popupHide', () => {
+    loaderButton.removeEventListener('click', onLoaderButtonClick);
+  }, {once: true});
 };
+
 
 export {renderComments};
