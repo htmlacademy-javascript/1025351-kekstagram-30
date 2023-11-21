@@ -14,11 +14,11 @@ const createComments = (commentsData) => commentsData.map(({avatar, message, nam
   return comment;
 });
 
-const renderComments = (commentsData) => {
+const renderComments = (commentsData, step = 5) => {
   const data = [...commentsData];
 
   const onLoaderButtonClick = () => {
-    container.append(...createComments(data.splice(0, 5)));
+    container.append(...createComments(data.splice(0, step)));
     shownCounter.textContent = commentsData.length - data.length;
     totalCounter.textContent = commentsData.length;
     loaderButton.classList.toggle('hidden', !data.length);
