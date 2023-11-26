@@ -34,3 +34,8 @@ pristine.addValidator(form.description, (text) => {
   const maxDescriptionLength = 140;
   return text.length <= maxDescriptionLength;
 }, 'Превышена максимальная длина описания', 1, true);
+
+const checkValidity = () => pristine.validate();
+const resetValidity = () => pristine.reset();
+
+export {checkValidity, resetValidity};
