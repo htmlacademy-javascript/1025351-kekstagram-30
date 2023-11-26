@@ -2,7 +2,7 @@ const popup = document.querySelector('.img-upload__overlay');
 const cancelButton = document.querySelector('.img-upload__cancel');
 
 const onDocumentKeydown = (evt) => {
-  if (evt.key === 'Escape') {
+  if ((evt.key === 'Escape') && !(evt.target.type === 'text') && !(evt.target.type === 'textarea')) {
     cancelButton.click();
   }
 };
