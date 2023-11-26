@@ -1,2 +1,4 @@
-import { showPopup } from "./popup";
+import { showPopup } from './popup';
+import './validation';
 
+showPopup();
