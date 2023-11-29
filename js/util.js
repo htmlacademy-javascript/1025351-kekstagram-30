@@ -1,4 +1,10 @@
-const getRandomInteger = (min, max) => Math.round((max - min) * Math.random() + min);
-const getRandomItem = (items) => items[getRandomInteger(0, items.length - 1)];
+const request = async (url, options) => {
+  const response = await fetch(url, options);
 
-export {getRandomItem, getRandomInteger};
+  if (!response.ok) {
+    throw new Error(response.status);
+  }
+  return response.json();
+};
+
+export {request};
