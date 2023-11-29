@@ -1,10 +1,21 @@
-import { showPopup } from './popup';
+import { showPopup, hidePopup } from './popup';
 import {getScale, resetScale} from './scale';
 import { checkValidity, resetValidity } from './validation';
 import { setEffect, getEffectValue, resetEffect } from './effects';
 
 const form = document.querySelector('.img-upload__form');
 const preview = document.querySelector('.img-upload__preview img');
+const submitButton = document.querySelector('.img-upload__submit');
+
+const setSubmitDisabled = (flag) => {
+  submitButton.disabled = flag;
+  submitButton.textContent = flag ? 'Публикую...' : 'Опубликовать';
+};
+
+const resetForm = () => {
+  form.reset();
+  hidePopup();
+};
 
 form.addEventListener('change', (evt) => {
   switch (evt.target.name) {
@@ -24,8 +35,9 @@ form.addEventListener('change', (evt) => {
 });
 
 form.addEventListener('submit', (evt) => {
-  if (!checkValidity()) {
-    evt.preventDefault();
+  evt.preventDefault();
+  if (checkValidity()) {
+    new FormData(form);
   }
 });
 
@@ -35,3 +47,4 @@ form.addEventListener('reset', () => {
   resetValidity();
 });
 
+export {setSubmitDisabled, resetForm};
